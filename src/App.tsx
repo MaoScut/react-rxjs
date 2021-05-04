@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.css";
 import { ClickExample } from "./Click";
+import ProgressExample from "./Progress";
 
 const examples: {
   route: string
@@ -15,6 +16,10 @@ const examples: {
   route: '/click',
   title: 'click',
   component: ClickExample
+}, {
+  route: '/progress',
+  title: 'progress',
+  component: ProgressExample
 }]
 
 function App() {
@@ -34,7 +39,7 @@ function App() {
       </nav>
       <Switch>
         {examples.map((o, index) => {
-          return <Route path={o.route} component={o.component} />
+          return <Route key={index} path={o.route} component={o.component} />
         })}
       </Switch>
     </div>
